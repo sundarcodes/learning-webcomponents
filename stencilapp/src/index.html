@@ -5,21 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <script src="/build/mycomponent.js"></script>
-
+  <!-- <link href="/build/main.css" rel="stylesheet" type="text/css"/> -->
+  <style>
+    body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  </style>
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
-  <h1>Chip</h1>
-
+  <h1>Hi from Vanilla HTML/JS</h1>
+  <h3>A simple component</h3>
+  <my-component first="Stencil" last="from Vanilla HTML/JS"></my-component>
+  <h3>A Chip component</h3>
   <stc-chip image="http://nodeframework.com/assets/img/js.png" text="image chip"></stc-chip>
   <stc-chip image="" text="just a chip"></stc-chip>
   <stc-chip image="" text="closeable chip" closeable></stc-chip>
   <stc-chip image="http://nodeframework.com/assets/img/js.png" text="closeable chip" closeable></stc-chip>
-
+  <h3>A Signature capture component</h3>
   <st-signature width="300" height="300" label="My Signature"></st-signature>
-
   <!-- <h1>Tabs</h1>
 
   <stc-tabs>
