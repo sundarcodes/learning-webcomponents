@@ -3,6 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    showClose: true 
+  }
+  onClose(e) {
+    console.log('In close', e)
+    this.setState({
+      showClose: false
+    })
+  }
+  componentDidMount() {
+    console.log(this.refs)
+    this.refs['foo'].addEventListener('stc-chip-close', ev => {
+      console.log('close event')
+      this.onClose(ev)
+    }
+    );
+  }
   render() {
     return (
       <div className="App">
@@ -12,8 +29,11 @@ class App extends Component {
         <h3>A Chip component</h3>
         <stc-chip image="http://nodeframework.com/assets/img/js.png" text="image chip"></stc-chip>
         <stc-chip image="" text="just a chip"></stc-chip>
-        <stc-chip image="" text="closeable chip" closeable></stc-chip>
-        <stc-chip image="http://nodeframework.com/assets/img/js.png" text="closeable chip" closeable></stc-chip>
+        {/* <stc-chip image="" text="closeable chip" closeable={true} ></stc-chip> */}
+        <stc-chip image="" text="closeable chip"  closeable={true} ></stc-chip>
+        { (this.state.showClose && 
+        <stc-chip image="http://nodeframework.com/assets/img/js.png" ref="foo" text="closeable chip" closeable={true} onClose={this.onClose.bind(this)}></stc-chip>)
+        }
         <h3>A Signature capture component</h3>
         <st-signature width="300" height="300" label="My Signature"></st-signature>
       </div>

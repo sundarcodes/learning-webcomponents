@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-app';
+  closeTagClicked: boolean = false;
+
+  closeTag(e) {
+    console.log('Close tag', e)
+    this.closeTagClicked = true
+  }
 }
